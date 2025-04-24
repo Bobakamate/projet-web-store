@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du Produit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="Shop-banner">
+        <h2>Electro Shop</h2>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 56C17.6569 56 19 54.6569 19 53C19 51.3431 17.6569 50 16 50C14.3431 50 13 51.3431 13 53C13 54.6569 14.3431 56 16 56Z" fill="#FFFFFF"/>
+            <path d="M48 56C49.6569 56 51 54.6569 51 53C51 51.3431 49.6569 50 48 50C46.3431 50 45 51.3431 45 53C45 54.6569 46.3431 56 48 56Z" fill="#FFFFFF"/>
+            <path d="M12 10H16L20 40H50L56 20H22" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+    <div class="cart-icon"  onclick="toggleCartDropdown()">
+        🛒 
+        <div id="cart-dropdown" class="cart-dropdown"></div>
+    </div>
+
+    <div id="detail-box">
+        <div class="produit-detail">
+            <img id="produit-image" class="produit-image" src="" alt="Image du produit">
+
+            <div class="detail-info">
+                <h2 id="produit-titre"></h2>
+                <h3 id="produit-prix"></h3>
+                <h4 id="produit-categorie"></h4>
+                <p id="produit-description"></p>
+
+                <p >Quantité :</p>
+                <select id="quantite" class="select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+
+                <p>Moyen de paiement :</p>
+                <select id="paiement" class="select">
+                    <option value="paypal">PayPal</option>
+                    <option value="carte">Carte Bancaire</option>
+                </select>
+
+                <button class="achat" id="achat">Ajouter Au panier</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="code.js">
+
+    </script>
+</body>
+</html>

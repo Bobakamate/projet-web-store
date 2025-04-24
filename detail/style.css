@@ -1,0 +1,126 @@
+#detail-box {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.produit-detail {
+    display: flex;
+    gap: 30px;
+    max-width: 1000px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.produit-detail img.produit-image {
+    width: 500px;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px; 
+} 
+
+.detail-info {
+    flex: 1;
+}
+
+.detail-info h2 {
+    margin-bottom: 10px;
+}
+
+.detail-info p {
+    margin-top: 10px;
+    line-height: 1.5;
+}
+.Shop-banner{
+    height: 70px;
+    background-color: black;
+    width: 100%;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.achat{
+    width: 100%;
+    background-color: black;
+    padding: 5px;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    height: 35px;
+
+
+}
+.select {
+    width: 100%;
+    padding: 7px;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    background-color: white;
+    font-size: 16px;
+}
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+    margin: 20px;
+    font-size: 24px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 14px;
+}
+
+.cart-dropdown {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 300px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+.cart-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.cart-item-info {
+    flex-grow: 1;
+}
+
+.remove-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+}
