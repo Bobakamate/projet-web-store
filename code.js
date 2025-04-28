@@ -12,7 +12,7 @@
         }
     }
     
-    const listeProduit = [
+    var listeProduit = [
         new Produit(0, "Dell XPS 13", "12990 MAD", "PC", "Le Dell XPS 13 est un ultrabook premium avec un écran InfinityEdge de 13,4 pouces au ratio 16:10. Il embarque un processeur Intel Core i7, 16Go de RAM et un SSD de 512Go dans un châssis léger et élégant.", "dell.jpg"),
         
         new Produit(1, "iPhone 14 Pro", "9990 MAD", "Smartphone", "L'iPhone 14 Pro est doté de la puce A16 Bionic, d'un écran OLED de 6,1 pouces avec Dynamic Island et d'une caméra principale de 48MP. Sa construction en acier inoxydable et verre Ceramic Shield offre une durabilité premium.", "iPhone-14-Pro.jpg"),
@@ -38,10 +38,54 @@
         new Produit(11, "Nintendo Switch OLED", "3490 MAD", "Console", "La Nintendo Switch OLED améliore l'expérience de jeu avec son écran OLED de 7 pouces aux couleurs vibrantes. Elle intègre 64Go de stockage, un port Ethernet au dock et un support arrière ajustable plus robuste.", "switch-oled.jpg"),
         
     ];
+    function initialiserProduits() {
+        console.log("Initialisation des produits...");
+        
+        // Récupération des produits du localStorage s'ils existent
+        const produitsStockes = localStorage.getItem('produits');
+        
+        if (produitsStockes) {
+            try {
+                // Si des produits existent dans le localStorage, les utiliser
+                const produitsParsed = JSON.parse(produitsStockes);
+                listeProduit = produitsParsed.map(p => new Produit(
+                    p.id, p.nom, p.prix, p.categorie, p.description, p.image
+                ));
+                console.log("Produits chargés depuis localStorage:", listeProduit.length);
+            } catch (e) {
+              
+            }
+        } 
+ 
+    }
+    initialiserProduits()
+    remplirCategories()  
+
+    function remplirCategories() {
+        const select = document.getElementById("Categorie");
+        
+        // Vider les anciennes options (facultatif si besoin)
+        select.innerHTML = '';
     
-      
-
-
+        // Ajouter l'option "Toutes les catégories" en premier
+        const optionAll = document.createElement("option");
+        optionAll.value = "all";
+        optionAll.textContent = "Toutes les catégories";
+        select.appendChild(optionAll);
+    
+        // Extraire toutes les catégories uniques depuis listeProduit
+        const categories = [...new Set(listeProduit.map(p => p.categorie))];
+    
+        // Ajouter une option pour chaque catégorie
+        categories.forEach(cat => {
+            const option = document.createElement("option");
+            option.value = cat;
+            option.textContent = cat;
+            select.appendChild(option);
+        });
+    
+    }
+    
 function create_produit_item(main_box,produit_box,listeProduitItem){
 if(listeProduitItem){
     var produit = document.createElement("div")

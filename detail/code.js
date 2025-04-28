@@ -11,7 +11,7 @@ class Produit {
 }
 
     
-const listeProduit = [
+var  listeProduit = [
     new Produit(0, "Dell XPS 13", "12990 MAD", "PC", "Le Dell XPS 13 est un ultrabook premium avec un écran InfinityEdge de 13,4 pouces au ratio 16:10. Il embarque un processeur Intel Core i7, 16Go de RAM et un SSD de 512Go dans un châssis léger et élégant.", "dell.jpg"),
     
     new Produit(1, "iPhone 14 Pro", "9990 MAD", "Smartphone", "L'iPhone 14 Pro est doté de la puce A16 Bionic, d'un écran OLED de 6,1 pouces avec Dynamic Island et d'une caméra principale de 48MP. Sa construction en acier inoxydable et verre Ceramic Shield offre une durabilité premium.", "iPhone-14-Pro.jpg"),
@@ -36,9 +36,29 @@ const listeProduit = [
     
     new Produit(11, "Nintendo Switch OLED", "3490 MAD", "Console", "La Nintendo Switch OLED améliore l'expérience de jeu avec son écran OLED de 7 pouces aux couleurs vibrantes. Elle intègre 64Go de stockage, un port Ethernet au dock et un support arrière ajustable plus robuste.", "switch-oled.jpg"),
     
-    new Produit(12, "Bose SoundLink Revolve II", "1990 MAD", "Enceinte", "La Bose SoundLink Revolve II diffuse un son à 360° homogène dans une conception robuste IP55. Offrant 13 heures d'autonomie, elle permet le jumelage stéréo et s'intègre facilement aux assistants vocaux.", "bosesoundlink.jpg")
 ];
+function initialiserProduits() {
+    console.log("Initialisation des produits...");
+    
+    // Récupération des produits du localStorage s'ils existent
+    const produitsStockes = localStorage.getItem('produits');
+    
+    if (produitsStockes) {
+        try {
+            // Si des produits existent dans le localStorage, les utiliser
+            const produitsParsed = JSON.parse(produitsStockes);
+            listeProduit = produitsParsed.map(p => new Produit(
+                p.id, p.nom, p.prix, p.categorie, p.description, p.image
+            ));
+            console.log("Produits chargés depuis localStorage:", listeProduit.length);
+        } catch (e) {
+            console.log("Erreur de chargement",e)
+          
+        }
+    } 
 
+}
+initialiserProduits()   
 function getProduitById(id) {
     for(var i = 0 ; i < listeProduit.length ; i++){
         if(listeProduit[i].id == id){
