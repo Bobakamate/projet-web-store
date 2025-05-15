@@ -24,9 +24,9 @@ function verifierIdentifiants(email, password, role) {
 // Fonction pour rediriger selon le rôle
 function redirectionSelonRole(role) {
     if (role === "admin") {
-        window.location.href = "../admin/index.html";
+        window.location.href = "admin/index.html";
     } else {
-        window.location.href = "../index.html";
+        window.location.href = "index.html";
     }
 }
 
