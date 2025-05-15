@@ -1,49 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Connexion - Electro Shop</title>
 </head>
 <body>
-    <div  >
+    <div>
         <div class="Shop-banner">
             <h2>Electro Shop</h2>
             <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16 56C17.6569 56 19 54.6569 19 53C19 51.3431 17.6569 50 16 50C14.3431 50 13 51.3431 13 53C13 54.6569 14.3431 56 16 56Z" fill="#FFFFFF"/>
                 <path d="M48 56C49.6569 56 51 54.6569 51 53C51 51.3431 49.6569 50 48 50C46.3431 50 45 51.3431 45 53C45 54.6569 46.3431 56 48 56Z" fill="#FFFFFF"/>
                 <path d="M12 10H16L20 40H50L56 20H22" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              
-
+            </svg>
         </div>
-       <div >
-        <input class="search" id="search" type="text" placeholder="Chercher un produit">
-        <p>Categorie</p>
-        <select id="Categorie">
- 
-
-        </select>
-
-        <h4>prix</h4>
-        <div>
-            <input type="text" id="prixMin" placeholder="min"   />
-            <input type="text" id="prixMax" placeholder="max"  />
-            <button class="appliquer" id="filtrePrix" >Appliquer</button>
-
+        
+        <div class="login-container">
+            <div class="login-box">
+                <h2>Connexion</h2>
+                
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email"  value="admin" placeholder="Entrez votre email">
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="text" id="password" value="admin"  placeholder="Entrez votre mot de passe">
+                </div>
+                
+                <div class="role-selection">
+                    <p>Se connecter en tant que:</p>
+                    <div class="role-options">
+                        <label class="role-option">
+                            <input type="radio" name="role" value="user" >
+                            <span class="role-label">Utilisateur</span>
+                        </label>
+                        <label class="role-option">
+                            <input type="radio" name="role" value="admin" checked>
+                            <span class="role-label">Administrateur</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <button class="connexion-btn" id="connexion">Se connecter</button>
+                
+             
+                
+                <div id="errorMessage" class="error-message"></div>
+            </div>
         </div>
-        <div style="height: 10px;"></div>
-    </div>
-    <div id="main-box">
-       
-    </div>
-
-     
-            
-
     </div>
     
-    <script src="code.js"></script>         
+    <script src="code.js"></script>
 </body>
 </html>
